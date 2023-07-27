@@ -1,20 +1,28 @@
-# Getting Started
+博客地址：https://developer.aliyun.com/article/923654
 
-### Reference Documentation
+Apache Dubbo 
 
-For further reference, please consider the following sections:
+官网：https://dubbo.apache.org/zh/
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.6.13/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.6.13/maven-plugin/reference/html/#build-image)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.6.13/reference/htmlsingle/#web)
+Dubbo 提供的基础能力包括：
 
-### Guides
+- 服务发现
+- 流式通信
+- 负载均衡
+- 流量治理
 
-The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+Zookeeper 简介
 
+Zookeeper 是 Apache Hadoop 的子项目，是一个树型的目录服务，支持变更推送，
+适合作为 Dubbo 服务的注册中心，工业强度较高，可用于生产环境。
+
+
+![img.png](img.png)
+
+
+maven 命令：
+
+mvn clean install -Dmaven.test.skip=true
+
+mvn -U idea:idea

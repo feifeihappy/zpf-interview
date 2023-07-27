@@ -1,0 +1,33 @@
+#数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pro?useSSL=false&allowMultiQueries=true
+    username: root
+    password: 123456
+
+#防止端口冲突
+server:
+  port: 8004
+
+#dubbo 配置
+dubbo:
+  application:
+    #应用名称
+    name: provider
+  registry:
+    #注册中心地址
+    address: zookeeper://localhost:2181
+    #超时时间，单位毫秒
+    timeout: 30000
+  #元中心地址
+  metadata-report:
+    address: zookeeper://localhost:2181
+  protocol:
+    #协议名称
+    name: dubbo
+    #协议端口
+    port: 20880
+  scan:
+    #扫描服务包的位置
+    base-packages: com.example.provider

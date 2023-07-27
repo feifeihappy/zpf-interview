@@ -1,0 +1,11 @@
+#防止端口冲突
+server:
+  port: 8005
+dubbo:
+  application:
+    #应用名称
+    name: consumer
+  registry:
+    #注册中心地址
+    address: zookeeper://localhost:2181
+    timeout: 30000
