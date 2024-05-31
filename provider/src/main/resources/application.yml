@@ -27,7 +27,7 @@ dubbo:
     #协议名称
     name: dubbo
     #协议端口
-    port: 20880
+    port: 20881
   scan:
     #扫描服务包的位置
     base-packages: com.example.provider
