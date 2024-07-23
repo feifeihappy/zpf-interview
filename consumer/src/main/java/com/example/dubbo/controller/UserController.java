@@ -3,9 +3,12 @@ package com.example.dubbo.controller;
 import com.example.common.User;
 import com.example.common.UserService;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,13 +19,15 @@ import java.util.Map;
  * auther：zhaopengfei
  */
 @RestController
-public class UserController {
+public class UserController  {
 
     @DubboReference
     private UserService userService;
 
     @RequestMapping("/user")
-    public User getUser() {
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public User getUser(HttpServletRequest httpServletRequest) {
+        httpServletRequest.getHeader("");
         return userService.getUser();
     }
 
